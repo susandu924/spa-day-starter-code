@@ -1,5 +1,5 @@
 body {
-    background-color: pink;
+    background-color: orchid;
 }
 
 div {
@@ -18,9 +18,41 @@ h1 {
         background-color: white;
 }
 
+h2 {
+    color: #7A4988;
+}
+
+h3 {
+    color: #26000a;
+}
+
 table {
     margin: auto;
             width: 50%;
             padding: 10px;
             text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nail-polish-box {
+    height: 100px;
+    width: 100px;
+    background-color: #FFFFFF;
+}
+
+.vamp-polish {
+background-color: #26000a;
+}
+
+.mauve-polish {
+background-color: #7A4988;
+}
+
+.black-polish {
+background-color: #000;
 }
