@@ -50,5 +50,6 @@ public class UserController {
             model.addAttribute("date", formattedDate);
         }
         return "user/details";
+//
     }
 }
