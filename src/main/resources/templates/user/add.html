@@ -5,6 +5,9 @@
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
     <title>Sign Up</title>
 </head>
+
+<!--TO DO 3: While you’re in the add.html template remove the type="email" designation from the email input. The last studio had you add this type to provide some client-side validation on the email field, but we shouldn’t consider that sufficient. Now that we know how to use model validation to validate an email field, we’ll favor this technique over client-side validation. Even with client-side validation (that is, in the browser), you should always validate data on the server as well. You might want to provide constraints in addition to or beyond what the browser does, and it’s also possible for a clever (or, more often, malicious) user to bypass the browser’s validation.
+For this studio, we’ll remove the input type to make it easier to test the server-side validation-->
 <body>
     <form method = 'post' th:action="@{/user}">
         <label>
