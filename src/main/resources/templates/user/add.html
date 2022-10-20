@@ -12,25 +12,30 @@ For this studio, we’ll remove the input type to make it easier to test the ser
     <form method = 'post' th:action="@{/user}">
         <label>
             Username:
-            <input type = 'text' name = 'username' th:value="${username}">
+            <input th:field="${user.username}" th:value="${user.username}">
+            <p class="errors" th:errors="${user.username}"></p>
         </label>
+        <p th:errors="${user.username}"></p>
 
         <label>
             Email:
-            <input type = 'email' name = 'email' th:value="${email}">
+            <input type = 'email' name = 'email' th:value="${user.email}">
+            <p class="errors" th:errors="${user.email}"></p>
         </label>
 
         <label>
             Password:
             <input type = 'password' name = 'password'>
+            <p class="errors" th:errors="${user.password}"></p>
         </label>
 
         <label>
             Verify Password:
             <input type = 'password' name = 'verify'>
+            <p class="errors" th:text="${error}"></p>
         </label>
 
-        <p th:text="${error}"></p>
+
 
         <input type = 'submit' value = 'Sign Up'>
     </form>

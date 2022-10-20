@@ -1,24 +1,19 @@
 package org.launchcode.spaday.models;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class User {
 
-//    TO DO 1:
-//    Add Validation Annotations¶
-//Navigate to the User model class. Add validation annotations to ensure these conditions are satisfied:
-//
-//Username, password, and verify are required (they can’t be empty)
-//Username is between 5 and 15 characters
-//Email is optional
-//If provided, the email has the format of a valid email address.
-//The password is at least 6 characters lon
-
-//    TO DO 5: As we mentioned above, we are not able to use Spring’s validation machinery to validate that the two password fields match given the setup we have here. Checking errors.hasErrors() will only tell us if there are errors in other form data fields.
-//
-//Last studio, we added some validation checks to make sure the password fields match. Now we have two validation sections: one for the annotation-configured validation (which checks errors.hasErrors()), and one that checks that the password fields match.
-// Make sure they work in-sync with each other to properly return to the form if any of the validation conditions fail.
-
+    @Size(message = "Name must be between 5-15 characters!", min = 5, max = 15)
+    @NotBlank(message = "Name must be filled in.")
     private String username;
+    @Email(message = "Invalid email.")
     private String email;
+
+    @NotBlank(message = "Password required.")
+    @Size(message = "Password length needs to be at least 6 characters long!", min = 6)
     private String password;
 
     public User() {
