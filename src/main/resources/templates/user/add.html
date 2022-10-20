@@ -6,39 +6,42 @@
     <title>Sign Up</title>
 </head>
 
-<!--TO DO 3: While you’re in the add.html template remove the type="email" designation from the email input. The last studio had you add this type to provide some client-side validation on the email field, but we shouldn’t consider that sufficient. Now that we know how to use model validation to validate an email field, we’ll favor this technique over client-side validation. Even with client-side validation (that is, in the browser), you should always validate data on the server as well. You might want to provide constraints in addition to or beyond what the browser does, and it’s also possible for a clever (or, more often, malicious) user to bypass the browser’s validation.
-For this studio, we’ll remove the input type to make it easier to test the server-side validation-->
 <body>
-    <form method = 'post' th:action="@{/user}">
-        <label>
-            Username:
-            <input th:field="${user.username}" th:value="${user.username}">
-            <p class="errors" th:errors="${user.username}"></p>
-        </label>
-        <p th:errors="${user.username}"></p>
-
-        <label>
-            Email:
-            <input name = 'email' th:value="${user.email}">
-            <p class="errors" th:errors="${user.email}"></p>
-        </label>
-
-        <label>
-            Password:
-            <input type = 'password' name = 'password'>
-            <p class="errors" th:errors="${user.password}"></p>
-        </label>
-
-        <label>
-            Verify Password:
-            <input type = 'password' name = 'verify'>
-            <p class="errors" th:text="${error}"></p>
-        </label>
-
-
-
-        <input type = 'submit' value = 'Sign Up'>
+    <form method = 'post' >
+        <div class="form-group">
+            <label>
+                Username:
+                <input th:field="${user.username}" th:value="${user.username}">
+                <p class="errors" th:errors="${user.username}"></p>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Email:
+                <input type = 'email' name = 'email' th:value="${user.email}">
+                <p class="errors" th:errors="${user.email}"></p>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Password:
+                <input type = 'password' name = 'password'>
+                <p class="errors" th:errors="${user.password}"></p>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Verify Password:
+                <input type = 'password' name = 'verify'>
+                <p class="errors" th:text="${error}"></p>
+            </label>
+        </div>
+        <div class="form-group">
+            <input type = 'submit' value = 'Sign Up'>
+        </div>
     </form>
-
 </body>
 </html>
+
+
+
