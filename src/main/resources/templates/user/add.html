@@ -19,7 +19,7 @@ For this studio, we’ll remove the input type to make it easier to test the ser
 
         <label>
             Email:
-            <input type = 'email' name = 'email' th:value="${user.email}">
+            <input name = 'email' th:value="${user.email}">
             <p class="errors" th:errors="${user.email}"></p>
         </label>
 
