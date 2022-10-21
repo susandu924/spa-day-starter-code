@@ -16,6 +16,9 @@ public class User {
     @Size(message = "Password length needs to be at least 6 characters long!", min = 6)
     private String password;
 
+    @NotBlank(message = "Passwords do not match")
+    private String verifyPassword;
+
     public User() {
 
     }
@@ -49,5 +52,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getVerifyPassword() {
+        return verifyPassword;
+    }
+
+    public void setVerifyPassword(String verifyPassword) {
+        this.verifyPassword = verifyPassword;
     }
 }
