@@ -7,6 +7,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 @Controller
 @RequestMapping("user")
@@ -19,7 +20,7 @@ public class UserController {
     }
 
     @PostMapping("add")
-    public String processAddUserForm(@ModelAttribute  User user, String verify, Errors errors, Model model) {
+    public String processAddUserForm(Model model, @ModelAttribute @Valid User user,Errors errors, @NotBlank String verify) {
         model.addAttribute("user", user);
         model.addAttribute("verify", verify);
 

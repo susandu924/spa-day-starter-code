@@ -6,17 +6,19 @@ import javax.validation.constraints.Size;
 
 public class User {
 
-    @Size(message = "Name must be between 5-15 characters!", min = 5, max = 15)
-    @NotBlank(message = "Name must be filled in.")
+
+    @Size(message = "Name must be between 5-15 characters.", min = 5, max = 15)
+    @NotBlank(message = "Name must be filled in!")
     private String username;
     @Email(message = "Invalid email.")
     private String email;
 
-    @NotBlank(message = "Password required.")
-    @Size(message = "Password length needs to be at least 6 characters long!", min = 6)
+
+    @Size(message = "Password length needs to be at least 6 characters long.", min = 6)
+    @NotBlank(message = "Password required!")
     private String password;
 
-    @NotBlank(message = "Passwords do not match")
+    @NotBlank(message = "Passwords do not match!")
     private String verifyPassword;
 
     public User() {
