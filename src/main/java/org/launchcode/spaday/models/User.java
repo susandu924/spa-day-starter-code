@@ -32,6 +32,10 @@ public class User {
         this.password = password;
     }
 
+
+//    Add a new method, private void checkPassword,
+//    that compares password and verifyPassword. If neither is null and they don’t match, then set verifyPassword = null.
+
     public String getUsername() {
         return username;
     }

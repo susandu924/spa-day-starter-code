@@ -34,6 +34,9 @@ public class UserController {
                 return "user/index";
             }
         }
+//    private void checkPassword(Model model, @ModelAttribute @Valid User user){
+//        if (user.password).equals(user
+//    }
     }
 //        model.addAttribute("user", user);
 //        model.addAttribute("verify", verify);
